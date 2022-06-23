@@ -1,6 +1,6 @@
 package d.after;
 
-public class Email implements MessagingOpt {
+public class Email implements Message {
 
     @Override
     public void sendEmail(Person person, String message) {

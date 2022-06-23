@@ -3,7 +3,7 @@ package i.after;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class DVD implements DVDItm, LibraryItem, Exchange {
+public class DVD implements  LibraryItem, CheckIn {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -60,14 +60,29 @@ public class DVD implements DVDItm, LibraryItem, Exchange {
     }
 
     @Override
+    public int getRunTimeInMinutes() {
+        return 0;
+    }
+
+    @Override
     public void checkIn() {
         borrower = "";
+    }
+
+    @Override
+    public void checkout(String borrower) {
+
     }
 
     @Override
     public void checkOut(String borrower) {
         this.borrower = borrower;
         borrowDate = LocalDateTime.now();
+    }
+
+    @Override
+    public void Out() {
+
     }
 
     @Override

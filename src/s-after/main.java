@@ -2,16 +2,16 @@ package s.after;
 
 
 public class main {
-    public static void main(String[] args) {
+    public static <User> void main(String[] args) {
 
 
         System.out.println("Welcome to my application");
 
         Person person = new Person();
-        User user = new User();
+        Users user = new Users();
 
 
-        person = user.createrPerson();
+        person = user.createPerson();
         person.printUserName();
 
         if (person.getFirstName() == null || person.getFirstName().isEmpty()) {

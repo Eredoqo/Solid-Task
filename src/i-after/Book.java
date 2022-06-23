@@ -2,7 +2,7 @@ package i.after;
 
 import java.time.LocalDateTime;
 
-public class Book implements AudioBook, LibraryItem, CheckIn-Out {
+public class Book extends ReferenceBook implements LibraryItem, CheckIn{
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -47,6 +47,11 @@ public class Book implements AudioBook, LibraryItem, CheckIn-Out {
     }
 
     @Override
+    public int getRunTimeInMinutes() {
+        return 0;
+    }
+
+    @Override
     public void checkIn() {
         borrower = "";
     }
@@ -55,6 +60,11 @@ public class Book implements AudioBook, LibraryItem, CheckIn-Out {
     public void checkOut(String borrower) {
         this.borrower = borrower;
         borrowDate = LocalDateTime.now();
+    }
+
+    @Override
+    public void Out() {
+
     }
 
     @Override

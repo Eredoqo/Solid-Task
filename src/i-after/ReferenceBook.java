@@ -1,8 +1,9 @@
 package i.after;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public class ReferenceBook implements LibraryItem, CheckIn-Out  {
+public abstract class ReferenceBook implements LibraryItem, CheckIn  {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -19,6 +20,16 @@ public class ReferenceBook implements LibraryItem, CheckIn-Out  {
     @Override
     public int getPages() {
         return pages;
+    }
+
+    @Override
+    public int getRuntimeInMinutes() {
+        return 0;
+    }
+
+    @Override
+    public List<String> getActors() {
+        return null;
     }
 
     @Override
@@ -52,9 +63,21 @@ public class ReferenceBook implements LibraryItem, CheckIn-Out  {
     }
 
     @Override
+    public void checkout(String borrower) {
+
+    }
+
+    @Override
+    public int getRunTimeInMinutes() {
+        return 0;
+    }
+
+    @Override
     public void checkOut(String borrower) {
         throw new UnsupportedOperationException();
     }
+
+    public abstract void Out();
 
     @Override
     public LocalDateTime getDueDate() {

@@ -1,8 +1,9 @@
 package i.after;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public class AudioBook implements LibraryItem, CheckIn-Out {
+public class AudioBook implements LibraryItem, CheckIn {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -25,6 +26,16 @@ public class AudioBook implements LibraryItem, CheckIn-Out {
     @Override
     public int getPages() {
         return -1;
+    }
+
+    @Override
+    public int getRuntimeInMinutes() {
+        return 0;
+    }
+
+    @Override
+    public List<String> getActors() {
+        return null;
     }
 
     @Override
@@ -58,9 +69,19 @@ public class AudioBook implements LibraryItem, CheckIn-Out {
     }
 
     @Override
+    public void checkout(String borrower) {
+
+    }
+
+    @Override
     public void checkOut(String borrower) {
         this.borrower = borrower;
         borrowDate = LocalDateTime.now();
+    }
+
+    @Override
+    public void Out() {
+
     }
 
     @Override
